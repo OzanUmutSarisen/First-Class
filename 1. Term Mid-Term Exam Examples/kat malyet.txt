@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int kat(int n);
+int main() {
+	int n;
+	printf("Enter a floor : ");
+	scanf("%d",&n);
+	printf("maliyet : %d", kat(n));
+}
+
+int kat(int n) {
+	if (n == 1)
+		return 1000;
+	else
+		return 1000 + (kat(n - 1) * 0.8);
+}

@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+	srand(time(0));
+	int k, x,line=1;
+	k = rand() % 1000;
+	printf("%d", k);
+	printf("write a number :");
+	while (1) {
+		scanf("%d", &x);
+		if (x>k){
+			printf("this number is higger than my number\n");
+		}
+		if (x<k) {
+			printf("this number is lower than my number\n");
+		}
+		if(k==x){
+			printf("%d. try Found it", line);
+		break;
+		}
+		line++;
+		
+	}
+	
+}

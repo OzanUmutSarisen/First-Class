@@ -1,0 +1,67 @@
+nclude<stdio.h>
+#include<stdlib.h>
+
+int main() {
+	int m1[2][2], m2[2][2];
+	for (int c = 0; c < 2; c++) {
+		for (int r = 0; r < 2; r++) {
+			printf("please wriete m1 [%d] [%d] size : ", r, c);
+			int size;
+			scanf("%d", &size);
+			m1[r][c] = size;
+		}
+	}
+	for (int c = 0; c < 2; c++) {
+		for (int r = 0; r < 2; r++) {
+			printf("please wriete m2 [%d] [%d] size : ", r, c);
+			int size;
+			scanf("%d", &size);
+			m2[r][c] = size;
+		}
+	}
+	for (int c = 0; c < 2; c++) {
+		for (int r = 0; r < 2; r++) {
+			printf("%d\t", m1[r][c]);
+		}
+		printf("\n");
+	}
+	printf("\n\n\n");
+	for (int c = 0; c < 2; c++) {
+		for (int r = 0; r < 2; r++) {
+			printf("%d\t", m2[r][c]);
+		}
+		printf("\n");
+	}
+	int m3[2][2];
+	int counter, sum = 0;
+	for (int a = 0; a <= 1; a++) {
+		counter = m1[0][a] * m2[a][0];
+		sum = sum + counter;
+		m3[0][0] = sum;
+	}
+	sum = 0;
+	for (int a = 0; a <= 1; a++) {
+		counter = m1[0][a] * m2[a][1];
+		sum = sum + counter;
+		m3[0][1] = sum;
+	}
+	sum = 0;
+	for (int a = 0; a <= 1; a++) {
+		counter = m1[1][a] * m2[a][0];
+		sum = sum + counter;
+		m3[1][0] = sum;
+	}
+	sum = 0;
+	for (int a = 0; a <= 1; a++) {
+		counter = m1[1][a] * m2[a][1];
+		sum = sum + counter;
+		m3[1][1] = sum;
+	}
+	printf("\n\n\n");
+	for (int c = 0; c < 2; c++) {
+		for (int r = 0; r < 2; r++) {
+			printf("%d\t", m3[r][c]);
+		}
+		printf("\n");
+	}
+}
